@@ -1,14 +1,6 @@
 [
     {
-      "id": 1,
-      "title": "Santo es el Señor",
-      "artist": "Marcos Witt",
-      "lyrics": "Santo es el Señor, digno de alabanza...\nSu amor es eterno...",
-      "chords": "C G Am F\nC G F G",
-      "category": "Alabanza"
-    },
-    {
-        "id": 2,
+        "id": 1,
         "title": "Temprano yo te buscare",
         "artist": "Marcos Witt",
         "lyrics": "Temprano yo te buscare...\nDe madrugada yo me acercare a ti...",
@@ -16,7 +8,7 @@
         "category": "Alabanza"
       },
       {
-        "id": 3,
+        "id": 2,
         "title": "A el alto y sublime",
         "artist": "Gadiel Espinoza",
         "lyrics": "A el alto y sublime que habita en la eternidad...\nY su nombre es el Santo de israel...",
@@ -24,7 +16,7 @@
         "category": "Alabanza"
       },
       {
-        "id": 4,
+        "id": 3,
         "title": "Creo en Ti Jesús",
         "artist": "Julio Melgar",
         "lyrics": "Quiero levantar a ti mis manos\nmaravilloso Jesús, milagroso Señor\nLlena este lugar de tu presencia\ny haz descender tu poder\na los que estamos aquí\n\nCreo en ti Jesús\ny en lo que harás en mí\nCreo en ti Jesús\ny en lo que harás en mí\nEn mí, en mí\n\nRecibe toda la gloria\nrecibe toda la honra\nprecioso hijo de Dios",
@@ -56,14 +48,6 @@
       },
       {
         "id": 8,
-        "title": "Te Amo Dios",
-        "artist": "Jenn Johnson, Ed Cash, Jason Ingram, Ben Fielding, Brian Johnson",
-        "lyrics": "Te amo Dios\nTu bondad nunca me falla\nY mis días, en tus manos están\nDesde el momento que despierto\nHasta el anochecer\nYo cantaré de la bondad de Dios\n\nEn mi vida has sido bueno\nEn mi vida has sido fiel Señor\nCon cada aliento de mi ser\nYo cantaré de la bondad de Dios\n\nAmo Tu voz\nMe has guiado a través del fuego\nEn la oscuridad\nTu presencia me acompaña\nTe conozco como Padre\nComo amigo también\nYo cantaré de la bondad de Dios\n\nEn mi vida has sido bueno\nEn mi vida has sido fiel Señor\nCon cada aliento de mi ser\nYo cantaré de la bondad de Dios\n\nTu bondad corre detrás\nCorre detrás de mí\nTu bondad corre detrás\nCorre detrás de mí\nMi vida te doy, yo me rindo a ti\nTe doy todo de mí\nTu bondad corre detrás\nCorre detrás de mí\nTu bondad corre detrás\nCorre detrás de mí\nTu bondad corre detrás\nCorre detrás de mí\nMi vida te doy, yo me rindo a ti\nTe doy todo de mí\nTu bondad corre detrás\nCorre detrás de mí\n\nEn mi vida has sido bueno\nEn mi vida has sido fiel Señor\nCon cada aliento de mi ser\nYo cantaré de la bondad de Dios\nEn mi vida has sido bueno\nEn mi vida has sido fiel Señor\nCon cada aliento de mi ser\nYo cantaré de la bondad de Dios\nYo cantaré de la bondad de Dios",
-        "chords": "   G\nTe amo Dios\n      C9           G\nTu bondad nunca me falla\n  D/F#  Em7         C9      D\nY mis  días, en tus manos están\n                         Em7  C9\nDesde el momento que despierto\n          G    D/F#  Em7\nHasta el anochecer\n        C9       D2         G\nYo cantaré de la bondad de Dios\n\nC9                        G\n   En mi  vida has sido bueno\nC9                       G     D\n   En mi vida has sido fiel Señor\nC9                         G  D/F#  Em7\n   Con cada aliento de mi ser\n        C9       D          G\nYo cantaré de la bondad de Dios\n\n       G\nAmo Tu voz\n         C9                 G\nMe has guiado a través del fuego\n        D/F#  Em7\nEn la oscuri__dad\n      C9            D\nTu presencia me acompaña\n                Em7  C9\nTe conozco como Padre\n        G      D/F#  Em7\nComo amigo también\n        C9       D          G\nYo cantaré de la bondad de Dios\n\nC9                        G\n   En mi  vida has sido bueno\nC9                       G     D\n   En mi vida has sido fiel Señor\nC9                         G  D/F#  Em7\n   Con cada aliento de mi ser\n        C9       D          G\nYo cantaré de la bondad de Dios\n\nG/B               C9\n    Tu bondad corre detrás\n    D            G\nCorre detrás de mí\nG/B               C9\n    Tu bondad corre detrás\n    D            G\nCorre detrás de mí\n     G/B              C9\nMi vida te doy, yo me rindo a ti\n    D           Em7\nTe doy todo de mí\nG/B               C9\n    Tu bondad corre detrás\n    D            G\nCorre detrás de mí\n\nG/B               C9\n    Tu bondad corre detrás\n    D            G\nCorre detrás de mí\nG/B               C9\n    Tu bondad corre detrás\n    D            G\nCorre detrás de mí\n     G/B              C9\nMi vida te doy, yo me rindo a ti\n    D           Em7\nTe doy todo de mí\nG/B               C9\n    Tu bondad corre detrás\n    D            G  G4  G\nCorre detrás de mí\n\nC9                        G\n   En mi  vida has sido bueno\nC9                       G     D\n   En mi vida has sido fiel Señor\nC9                         G  D/F#  Em7\n   Con cada aliento de mi ser\n        C9       D          G  G4  G\nYo cantaré de la bondad de Dios\n\nC9                        G\n   En mi  vida has sido bueno\nC9                       G     D\n   En mi vida has sido fiel Señor\nC9                         G  D/F#  Em7\n   Con cada aliento de mi ser\n        C9       D          Em7\nYo cantaré de la bondad de Dios\n        C9       D          G\nYo cantaré de la bondad de Dios",
-        "category": "Adoración"
-      },
-      {
-        "id": 9,
         "title": "Santo por Siempre",
         "artist": "Brian Johnson, Chris Tomlin, Jason Ingram, Jenn Johnson, Phil Wickham",
         "lyrics": "Mil generaciones\nCayendo en adoración\nPara cantar al Cordero el cántico de los siglos\nY todos los que nos precedieron\nY todos los que crean\nCantarán al Cordero el cántico de los siglos\n\nTu nombre es el más alto\nTu nombre es el más grande\nTu nombre está por encima de todos ellos\nTodos los tronos y dominios\nTodos los poderes y posiciones\nTu nombre está por encima de todos ellos\n\nY los ángeles claman: Santo\nToda la creación clama: Santo\nEres elevado alto, santo\nSanto por siempre\n\nSi te han perdonado\nY si has sido redimido\nCantad por siempre la canción al Cordero\nSi caminas en libertad\nY si llevas Su nombre\nCantad por siempre la canción al Cordero\nCantaremos la canción por siempre y amén\n\nY los ángeles claman: Santo\nToda la creación clama: Santo\nEres elevado alto, santo\nSanto por siempre\nEscucha a tu pueblo cantar: Santo\nAl Rey de reyes, santo\nSiempre serás santo\nSanto por siempre\n\nTu nombre es el más alto\nTu nombre es el más grande\nTu nombre está por encima de todos ellos\nTodos los tronos y dominios\nTodos los poderes y posiciones\nTu nombre está por encima de todos ellos\n\nTu nombre es el más alto\nTu nombre es el más grande\nTu nombre está por encima de todos ellos\nTodos los tronos y dominios\nTodos los poderes y posiciones\nTu nombre está por encima de todos ellos\n\nY los ángeles claman: Santo\nToda la creación clama: Santo\nEres elevado alto, santo\nSanto por siempre\nEscucha a tu pueblo cantar: Santo\nAl Rey de reyes, santo\nSiempre serás santo\nSanto por siempre\nSiempre serás santo\nSanto por siempre",
@@ -71,7 +55,7 @@
         "category": "Adoración"
       },
        {
-        "id": 10 ,
+        "id": 9 ,
         "title": "Suelto",
         "artist": "Sarai Rivera",
         "lyrics": "Es difícil\nA veces no se entiende\nMe conoces\nMás que a mí mismo\nCreer en algo\nQue no veo\nYo sé que tu plan es perfecto\n\nHazme ver\nComo tú me ves\nHazme entender\nY creer sin temer\n\nTe suelto mis sueños\nTe suelto mis deseos\nToma el control de mi vida\nTu plan anhelo más que el mío\nTe suelto mis planes\nTe suelto mis decisiones\nToma el control de mi vida\nTu plan anhelo más que el mío\n\nLo dejo en tus manos\nÚsame Jesús\nA mi manera no funcionó\nLo que tú tienes es mejor\nLo dejo en tus manos\nÚsame Jesús\nA mi manera no funcionó\nLo que tú tienes es mucho mejor\n\nOh oh\nSuelto mis sueños\nYo quiero lo que tú quieres para mí\nSuelto mis deseos\nPorque tu plan es perfecto\nToma el control de mi vida\nTu plan anhelo más que el mío\nYo suelto mis planes\nYo suelto mis decisiones\nToma el control de mi vida\nTu plan anhelo más que el mío\nSuelto mi control Dios\nToma todo control\nPorque tus planes mejor que los míos\nQue los míos",
