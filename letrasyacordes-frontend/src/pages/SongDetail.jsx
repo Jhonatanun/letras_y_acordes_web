@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { fetchSongById } from '../services/api';
 
 // Componente para un segmento (acorde + texto)
-function ChordProSegment( segment ) {
+function ChordProSegment( {segment} ) {
   return (
     <div className="chord-pro-segment">
       {segment.chord && <div className="chord">{segment.chord}</div>}
@@ -13,7 +13,7 @@ function ChordProSegment( segment ) {
 }
 
 // Componente para una línea completa
-function ChordProLine( segments ) {
+function ChordProLine( {segments} ) {
   return (
     <div className="chord-pro-line">
       {segments.map((seg, i) => (
