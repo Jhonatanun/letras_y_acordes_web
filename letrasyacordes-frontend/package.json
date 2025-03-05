@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^1.7.9",
     "chord-magic": "^2.1.1",
+    "chordprojs": "^0.1.1",
     "chordsheetjs": "^12.0.0",
     "letrasyacordes-frontend": "file:",
     "react": "^19.0.0",
