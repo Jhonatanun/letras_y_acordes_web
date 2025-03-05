@@ -132,13 +132,10 @@ function SongDetail() {
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
+        <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
           {song.title} - {song.artist}
         </h1>
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold text-gray-700 mb-2 text-center">
-            Letra
-          </h2>
           <pre className="whitespace-pre-wrap text-gray-600 leading-relaxed text-center">
             {song.lyrics || 'No hay letra disponible'}
           </pre>
