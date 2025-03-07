@@ -136,7 +136,7 @@ function SongDetail() {
           {song.title} - {song.artist}
         </h1>
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <pre className="whitespace-pre-wrap text-gray-600 leading-relaxed text-center">
+          <pre className="whitespace-pre-wrap text-gray-600 leading-relaxed text0-center">
             {song.lyrics || 'No hay letra disponible'}
           </pre>
           <LegalInfo legalStatus={song.legalStatus} />
