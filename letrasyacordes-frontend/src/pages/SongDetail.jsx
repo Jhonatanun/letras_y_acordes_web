@@ -94,58 +94,73 @@ function SongDetail() {
     }
   };
 
-  // Función para generar y descargar el PDF
-  const generatePDF = () => {
-    const doc = new jsPDF();
-    const margin = 20;
-    let yPosition = margin;
 
-    // Título
-    doc.setFontSize(16);
-    doc.setFont('helvetica', 'bold');
-    doc.text(`${song.title} - ${song.artist}`, margin, yPosition);
-    yPosition += 10;
+// Función para generar y descargar el PDF
+const generatePDF = () => {
+  const doc = new jsPDF();
+  const margin = 20;
+  const pageHeight = doc.internal.pageSize.height; // Alto de la página A4 (297mm)
+  let yPosition = margin;
 
-    // Línea separadora
-    doc.setLineWidth(0.5);
-    doc.line(margin, yPosition, 190, yPosition);
-    yPosition += 10;
-
-    // Letras
-    doc.setFontSize(12);
-    doc.setFont('helvetica', 'normal');
-    const lyricsLines = song.lyrics.split('\n');
-    lyricsLines.forEach(line => {
-      // Manejar saltos de página si el texto excede la página
-      if (yPosition > 270) { // 297mm es el alto de una página A4, dejamos margen
-        doc.addPage();
-        yPosition = margin;
-      }
-      doc.text(line, margin, yPosition);
-      yPosition += 7; // Espaciado entre líneas
-    });
-
-    // Información legal
-    yPosition += 5;
-    if (yPosition > 270) {
-      doc.addPage();
-      yPosition = margin;
-    }
+  // Función para agregar el encabezado en cada página
+  const addHeader = () => {
     doc.setFontSize(10);
-    doc.setFont('helvetica', 'italic');
-    doc.setTextColor(100); // Gris
-    const legalLabels = {
-      public_domain: 'Esta canción está en dominio público.',
-      cc_by: 'Licencia Creative Commons Atribución (CC BY). Debes dar crédito al autor.',
-      cc_by_sa: 'Licencia Creative Commons Atribución-CompartirIgual (CC BY-SA).',
-      original_permission: 'Permiso otorgado por el autor original.'
-    };
-    doc.text(legalLabels[song.legalStatus] || 'Información legal no disponible.', margin, yPosition);
-
-    // Descargar el PDF
-    doc.save(`${song.title} ${ song.artist === "Desconocido" ? "" : `- ${song.artist}` }.pdf`);
+    doc.setTextColor(100); // Gris claro para el encabezado
+    doc.text('Letras Cristianas App - Tu fuente de letras cristianas', 190, 10, { align: 'right' });
+    doc.setTextColor(0); // Restablecer a negro después del encabezado
   };
 
+  // Agregar encabezado en la primera página
+  addHeader();
+
+  // Título
+  doc.setFontSize(16);
+  doc.setFont('helvetica', 'bold');
+  doc.text(`${song.title} - ${song.artist}`, margin, yPosition);
+  yPosition += 10;
+
+  // Línea separadora
+  doc.setLineWidth(0.5);
+  doc.line(margin, yPosition, 190, yPosition);
+  yPosition += 10;
+
+  // Letras
+  doc.setFontSize(12);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(0); // Establecer el color a negro para las letras
+  const lyricsLines = song.lyrics.split('\n');
+  lyricsLines.forEach(line => {
+    // Manejar saltos de página si el texto excede la página
+    if (yPosition > pageHeight - margin) {
+      doc.addPage();
+      addHeader(); // Agregar encabezado en la nueva página
+      yPosition = margin;
+    }
+    doc.text(line, margin, yPosition);
+    yPosition += 7; // Espaciado entre líneas
+  });
+
+  // Información legal
+  yPosition += 5;
+  if (yPosition > pageHeight - margin) {
+    doc.addPage();
+    addHeader(); // Agregar encabezado en la nueva página
+    yPosition = margin;
+  }
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'italic');
+  doc.setTextColor(100); // Gris claro para la información legal
+  const legalLabels = {
+    public_domain: 'Esta canción está en dominio público.',
+    cc_by: 'Licencia Creative Commons Atribución (CC BY). Debes dar crédito al autor.',
+    cc_by_sa: 'Licencia Creative Commons Atribución-CompartirIgual (CC BY-SA).',
+    original_permission: 'Permiso otorgado por el autor original.'
+  };
+  doc.text(legalLabels[song.legalStatus] || 'Información legal no disponible.', margin, yPosition);
+
+  // Descargar el PDF
+  doc.save(`${song.title} - ${song.artist}.pdf`);
+};
   // Determinar si los botones deben estar deshabilitados
   const currentIndex = songIds.indexOf(parseInt(id));
   const isFirstSong = currentIndex === 0 || currentIndex === -1;
