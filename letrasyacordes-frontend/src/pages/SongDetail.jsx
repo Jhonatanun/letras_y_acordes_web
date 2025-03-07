@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { fetchSongById, fetchSongs } from '../services/api';
+import { jsPDF } from 'jspdf';
+import { FaFilePdf } from 'react-icons/fa'; // Importamos el ícono SVG
 
 // Componente para mostrar información legal
 function LegalInfo({ legalStatus }) {
@@ -92,6 +94,58 @@ function SongDetail() {
     }
   };
 
+  // Función para generar y descargar el PDF
+  const generatePDF = () => {
+    const doc = new jsPDF();
+    const margin = 20;
+    let yPosition = margin;
+
+    // Título
+    doc.setFontSize(16);
+    doc.setFont('helvetica', 'bold');
+    doc.text(`${song.title} - ${song.artist}`, margin, yPosition);
+    yPosition += 10;
+
+    // Línea separadora
+    doc.setLineWidth(0.5);
+    doc.line(margin, yPosition, 190, yPosition);
+    yPosition += 10;
+
+    // Letras
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+    const lyricsLines = song.lyrics.split('\n');
+    lyricsLines.forEach(line => {
+      // Manejar saltos de página si el texto excede la página
+      if (yPosition > 270) { // 297mm es el alto de una página A4, dejamos margen
+        doc.addPage();
+        yPosition = margin;
+      }
+      doc.text(line, margin, yPosition);
+      yPosition += 7; // Espaciado entre líneas
+    });
+
+    // Información legal
+    yPosition += 5;
+    if (yPosition > 270) {
+      doc.addPage();
+      yPosition = margin;
+    }
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'italic');
+    doc.setTextColor(100); // Gris
+    const legalLabels = {
+      public_domain: 'Esta canción está en dominio público.',
+      cc_by: 'Licencia Creative Commons Atribución (CC BY). Debes dar crédito al autor.',
+      cc_by_sa: 'Licencia Creative Commons Atribución-CompartirIgual (CC BY-SA).',
+      original_permission: 'Permiso otorgado por el autor original.'
+    };
+    doc.text(legalLabels[song.legalStatus] || 'Información legal no disponible.', margin, yPosition);
+
+    // Descargar el PDF
+    doc.save(`${song.title} ${ song.artist === "Desconocido" ? "" : `- ${song.artist}` }.pdf`);
+  };
+
   // Determinar si los botones deben estar deshabilitados
   const currentIndex = songIds.indexOf(parseInt(id));
   const isFirstSong = currentIndex === 0 || currentIndex === -1;
@@ -132,11 +186,11 @@ function SongDetail() {
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+        <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">
           {song.title} - {song.artist}
         </h1>
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <pre className="whitespace-pre-wrap text-gray-600 leading-relaxed text0-center">
+          <pre className="whitespace-pre-wrap text-gray-600 leading-relaxed text-center">
             {song.lyrics || 'No hay letra disponible'}
           </pre>
           <LegalInfo legalStatus={song.legalStatus} />
@@ -155,12 +209,21 @@ function SongDetail() {
           >
             Anterior
           </button>
-          <Link
-            to="/"
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-          >
-            Volver al Inicio
-          </Link>
+          <div className="flex space-x-2">
+          <button
+          onClick={generatePDF}
+          className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition flex items-center space-x-2"
+        >
+          <FaFilePdf /> {/* Ícono SVG */}
+          <span>Imprimir PDF</span>
+        </button>
+            <Link
+              to="/"
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            >
+              Volver al Inicio
+            </Link>
+          </div>
           <button
             onClick={navigateToNext}
             disabled={isLastSong}
